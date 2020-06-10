@@ -1,0 +1,40 @@
+<DOCTYPE html>
+<html>
+<head><title> Book search </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+</head>
+<body>
+  <h1>Book Details</h1>
+
+    <ul>
+        <li>isbn: {{ Book.isbn }}</li>
+        <li>Author: {{ Book.author }}</li>
+        <li>Title: {{ Book.title}} </li>
+        <li>Year: {{ Book.year}} </li>
+        <li>The average rating: {{ ratingAvg}} </li>
+        <li>Number of ratings: {{ratingCount}} </li>
+        <li>Scale: {{ review.scale}} </li>
+        <li>review: {{ review.text}} </li>
+    </ul>
+
+    <p> Give a review to this book</p>
+    <form action="{{ url_for('reviewSubmission', book_id=Book.id) }}" method="post">
+      <div>
+        <input type ="radio" id="one" name="scale" value="1">
+        <label for ="one">1</label>
+        <input type ="radio" id="two"  name="scale" value="2">
+        <label for ="two">2</label>
+        <input type ="radio" id="three" name="scale"  value="3">
+        <label for ="three">3</label>
+        <input type ="radio" id="four" name="scale"  value="4">
+        <label for ="four">4</label>
+        <input type ="radio" id="five" name="scale"  value="5">
+        <label for ="five">5</label>
+      </div>
+      <label for="text_review">Write review:</label>
+      <input class="form-control" name="text_review"><br>
+      <button> Submit </button>
+
+  </body>
+  </html>

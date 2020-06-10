@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Login page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+</head>
+<body>
+  <h2> Login</h2>
+  <form action = "{{ url_for('login') }}" method="post" >
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input class="form-control" type= "text" name= "username"><br>
+      <label for="password">Password:</label>
+      <input class="form-control" type= "text" name= "password"><br>
+    </div>
+      <button class="btn btn-primary"> login</button>
+  </form>
+  </body>
+  </html>
